@@ -30,17 +30,15 @@ export default class Fontello {
         // get dirname from file
         // remove fontello auto-generate name
         const dirName = Path.dirname(file.entryName).replace(/^fontello-[a-z0-9]+\//gm, '');
-
+        
         // switch for dirname
         switch (dirName) {
           case FontelloTypes.FileType.CSS: {
-            const cssPath = Path.join(this.fOptions.css!, file.name);
-            zip.extractEntryTo(file, cssPath, true, true);
+            zip.extractEntryTo(file, this.fOptions.css!, false, true);
             return;
           }
           case FontelloTypes.FileType.FONT: {
-            const fontPath = Path.join(this.fOptions.font!, file.name);
-            zip.extractEntryTo(file, fontPath, true, true);
+            zip.extractEntryTo(file, this.fOptions.font!, false, true);
             return;
           }
           default: {
