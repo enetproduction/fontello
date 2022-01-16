@@ -2,12 +2,6 @@ export namespace FontelloTypes {
 
   export const Host = 'https://fontello.com';
 
-  export enum LogLevel {
-    DEBUG = 'debug',
-    INFO = 'info',
-    ERROR = 'error',
-  }
-
   export enum FileType {
     CSS = 'css',
     FONT = 'font',
@@ -30,8 +24,8 @@ export namespace FontelloTypes {
     // address of the proxy you are behind.
     proxy?: string;
 
-    // log level for app
-    logLevel?: LogLevel;
+    // verbose flag
+    verbose?: boolean;
   }
 
 }
