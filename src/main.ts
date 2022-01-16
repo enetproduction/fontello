@@ -30,7 +30,7 @@ export default class Fontello {
         // get dirname from file
         // remove fontello auto-generate name
         const dirName = Path.dirname(file.entryName).replace(/^fontello-[a-z0-9]+\//gm, '');
-        
+
         // switch for dirname
         switch (dirName) {
           case FontelloTypes.FileType.CSS: {
