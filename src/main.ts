@@ -15,7 +15,7 @@ export default class Fontello {
     const sessionId = await this.getSessionId();
     const zip = await this.getZip(sessionId);
 
-    // if css and font options is enabled - extract files to direct dirs
+    // if css and font options are enabled - extract files to direct dirs
     if (this.fOptions.css && this.fOptions.font) {
       // get all entries from zip
       const files = zip.getEntries();
@@ -33,16 +33,19 @@ export default class Fontello {
 
         // switch for dirname
         switch (dirName) {
-          case FontelloTypes.FileType.CSS:
+          case FontelloTypes.FileType.CSS: {
             const cssPath = Path.join(this.fOptions.css!, file.name);
             zip.extractEntryTo(file, cssPath, true, true);
             return;
-          case FontelloTypes.FileType.FONT:
+          }
+          case FontelloTypes.FileType.FONT: {
             const fontPath = Path.join(this.fOptions.font!, file.name);
             zip.extractEntryTo(file, fontPath, true, true);
             return;
-          default:
-          // do nothing if file is upper switch cases
+          }
+          default: {
+            // do nothing if file is upper switch cases
+          }
         }
       });
 
