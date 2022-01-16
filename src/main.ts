@@ -1,7 +1,7 @@
 import Path from 'path';
 import Needle from 'needle';
 import AdmZip from 'adm-zip';
-import {  FontelloTypes } from './Support/FontelloTypes';
+import { FontelloTypes } from './Support/FontelloTypes';
 
 export default class Fontello {
 
@@ -41,9 +41,10 @@ export default class Fontello {
             zip.extractEntryTo(file, fontPath, true, true);
             return;
           default:
-            // do nothing if file is upper switch cases
+          // do nothing if file is upper switch cases
         }
       });
+
       return;
     }
 
@@ -115,7 +116,7 @@ export default class Fontello {
 
     // define request options for needle
     const options: Needle.NeedleOptions = {
-      follow: 10
+      follow: 10,
     }
 
     if (this.fOptions.proxy) {
