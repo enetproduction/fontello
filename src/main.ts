@@ -17,6 +17,7 @@ export default class Fontello {
 
     // if css and font options is enabled - extract files to direct dirs
     if (this.fOptions.css && this.fOptions.font) {
+      // get all entries from zip
       const files = zip.getEntries();
 
       files.forEach((file) => {
