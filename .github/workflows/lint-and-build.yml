@@ -1,4 +1,4 @@
-name: Lint and test
+name: Lint and build
 
 on: [push, pull_request]
 
@@ -20,6 +20,5 @@ jobs:
 
     - run: yarn install
     - run: yarn add -D esbuild
-    - run: yarn test
     - run: yarn lint
     - run: yarn build-all
