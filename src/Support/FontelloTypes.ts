@@ -1,6 +1,6 @@
 export namespace FontelloTypes {
 
-  export const Host = 'https://fontello.com';
+  export const Host = process.env.FONTELLO_HOST || 'https://fontello.com';
 
   export enum FileType {
     CSS = 'css',
